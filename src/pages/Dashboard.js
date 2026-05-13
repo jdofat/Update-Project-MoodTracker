@@ -14,16 +14,15 @@ import {
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-// Use ../ to step out of 'pages' and into 'components'
+
 import MoodForm from "../components/MoodForm";
 import MoodList from "../components/MoodList";
 
 const Dashboard = () => {
   const [moods, setMoods] = useState([]);
   const [loading, setLoading] = useState(true);
-  
-  // Note: auth.currentUser can be null on first load, 
-  // so we use a state to track the user reliably.
+
+
   const [user, setUser] = useState(auth.currentUser);
   const navigate = useNavigate();
 

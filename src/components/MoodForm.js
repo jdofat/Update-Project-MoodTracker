@@ -1,7 +1,7 @@
 // forms and user input
 
 import React, { useState } from "react";
-import { moodOptions } from "../data";
+import { moodOptions } from "../data/data";
 
 const MoodForm = ({ onAddMood }) => {
   const [note, setNote] = useState("");
