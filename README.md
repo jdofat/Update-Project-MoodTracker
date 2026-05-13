@@ -73,7 +73,7 @@ Dependencies: Node.js (v16+), npm, Firebase Account
 
 ## Installing & Executing
 
-* Clone & Install:
+Clone & Install:
 
 `Bash`
 
@@ -83,11 +83,11 @@ Dependencies: Node.js (v16+), npm, Firebase Account
 
 `npm install`
 
-* Config:
+Config:
 
 Update src/firebase/firebaseConfig.js with your Firebase credentials
 
-* Run:
+Run:
 
 `Bash`
 
