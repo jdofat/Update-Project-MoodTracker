@@ -118,7 +118,10 @@ const styles = {
   container: {
     maxWidth: "900px",
     margin: "0 auto",
-    padding: "40px 20px"
+    padding: "40px 20px",
+    minHeight: "100vh",
+    background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+    fontFamily: "'Quicksand', sans-serif",
   },
   header: {
     display: "flex",
@@ -129,13 +132,23 @@ const styles = {
     paddingBottom: "20px"
   },
   logoutBtn: {
-    padding: "8px 16px",
-    backgroundColor: "#f1faee",
+    padding: "8px 20px",
+    backgroundColor: "rgba(255, 255, 255, 0.5)", // Semi-transparent white
     color: "#e63946",
     border: "1px solid #e63946",
-    borderRadius: "6px",
+    borderRadius: "20px", // Rounded "pill" shape for a softer look
     cursor: "pointer",
-    fontWeight: "bold"
+    fontFamily: "'Quicksand', sans-serif",
+    fontWeight: "500",
+    transition: "all 0.3s ease"
+  },
+  section: {
+    backgroundColor: "rgba(255, 255, 255, 0.7)", 
+    padding: "25px",
+    borderRadius: "15px",
+    boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.07)",
+    backdropFilter: "blur(4px)",
+    border: "1px solid rgba(255, 255, 255, 0.18)",
   },
   main: {
     display: "grid",

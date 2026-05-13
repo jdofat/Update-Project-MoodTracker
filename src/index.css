@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif; /* Soft, rounded modern font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Applying your pastel gradient here too */
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  min-height: 100vh;
+  color: #2d3436; /* Dark grey instead of harsh black */
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lora', serif; /* Elegant, soft serif for titles */
+  font-weight: 700;
+  color: #4a4e69; /* Muted purple-grey */
+}
