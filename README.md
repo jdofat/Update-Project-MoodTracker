@@ -2,7 +2,7 @@ Note: Updated Project- Original Project Replacement 5/2026
 
 
 # MindfulMoods: A Daily Emotion Tracker
-Jade Dofat
+Author: Jade Dofat
 
 ## Description
 MindfulMoods is a React.js application designed to help people track their daily moods. It is easy to lose track of your mental state, so this app offers a space for users to log daily moods and reflect on everyday feelings STRESS FREE!
@@ -57,24 +57,19 @@ MindfulMoods is a React.js application designed to help people track their daily
 
 ## What Was Learned
 
-* I learned how to connect a frontend UI to a live backend
-
-* Experience in breaking down a dashboard into smaller components 
-
-* Data fetching without crashing the app during loading states
+I learned how to connect a frontend UI to a live backend, gained experience breaking down a dashboard into smaller components, and worked with data fetching without crashing!
 
 ## Future Improvements
-Mood Analytics: Add a chart (using Chart.js) to show a visual "Mood Map" of the user's emotions over a week or month.
 
-Edit Functionality: Allow users to update past notes if they wish to add more reflection later.
+An edit function would allow users to update past notes if they wish to add more reflection later.
 
 ## Reminders:
 
-* Integrate browser notifications to remind users to log their mood at a specific time each day.
+Integrate browser notifications to remind users to log their mood at a specific time each day.
 
 ## Getting Started
 
-* Dependencies: Node.js (v16+), npm, Firebase Account
+Dependencies: Node.js (v16+), npm, Firebase Account
 
 ## Installing & Executing
 
@@ -86,12 +81,8 @@ cd mindful-moods
 npm install
 Config: Update src/firebase/firebaseConfig.js with your Firebase credentials.
 
-Run:
+* Run:
 
 Bash
 npm start
 Help
-Common issues usually involve Firebase permissions. Ensure your Firestore rules are set to allow read, write: if request.auth != null;.
-
-Authors
-[Your Name] - [Your Email]
