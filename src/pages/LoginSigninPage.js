@@ -107,4 +107,4 @@ const styles = {
     border: "none",
     borderRadius: "6px",
     cursor: "pointer",
-    fontWeight
+    fontWeight}}

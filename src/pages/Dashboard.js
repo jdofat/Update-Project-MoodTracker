@@ -1,7 +1,6 @@
-// added logout and logged-in user check
-
 import React, { useState, useEffect } from "react";
-import { db, auth } from "../firebase/firebaseConfig";
+// Use ../ to step out of 'pages' and into 'firebase'
+import { db, auth } from "../firebase/firebaseConfig"; 
 import { 
   collection, 
   addDoc, 
@@ -15,22 +14,29 @@ import {
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-// Importing our reusable components
+// Use ../ to step out of 'pages' and into 'components'
 import MoodForm from "../components/MoodForm";
 import MoodList from "../components/MoodList";
 
 const Dashboard = () => {
   const [moods, setMoods] = useState([]);
   const [loading, setLoading] = useState(true);
-  const user = auth.currentUser;
+  
+  // Note: auth.currentUser can be null on first load, 
+  // so we use a state to track the user reliably.
+  const [user, setUser] = useState(auth.currentUser);
   const navigate = useNavigate();
 
-  // Redirect if not logged in (Requirement: Conditional Rendering/Auth)
   useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    }
-  }, [user, navigate]);
+    const unsubscribe = auth.onAuthStateChanged((loggedInUser) => {
+      if (loggedInUser) {
+        setUser(loggedInUser);
+      } else {
+        navigate("/login");
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
   // READ: Real-time listener for mood entries
   useEffect(() => {
@@ -54,27 +60,32 @@ const Dashboard = () => {
     return () => unsubscribe();
   }, [user]);
 
-  // CREATE: Function passed to MoodForm as a prop
+  // CREATE
   const handleAddMood = async (newEntry) => {
     try {
       await addDoc(collection(db, "moods"), {
         ...newEntry,
-        userId: user.uid
+        userId: user.uid,
+        createdAt: new Date() // Best practice to add timestamp here
       });
     } catch (error) {
       console.error("Error adding mood:", error);
     }
   };
 
-  // DELETE: Function passed to MoodList -> MoodItem as a prop
+  // DELETE
   const handleDeleteMood = async (id) => {
     if (window.confirm("Are you sure you want to delete this entry?")) {
-      await deleteDoc(doc(db, "moods", id));
+      try {
+        await deleteDoc(doc(db, "moods", id));
+      } catch (error) {
+        console.error("Error deleting document: ", error);
+      }
     }
   };
 
-  const handleLogout = () => {
-    signOut(auth);
+  const handleLogout = async () => {
+    await signOut(auth);
     navigate("/");
   };
 
@@ -124,7 +135,8 @@ const styles = {
     color: "#e63946",
     border: "1px solid #e63946",
     borderRadius: "6px",
-    cursor: "pointer"
+    cursor: "pointer",
+    fontWeight: "bold"
   },
   main: {
     display: "grid",
