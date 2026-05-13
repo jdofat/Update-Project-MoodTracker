@@ -75,10 +75,10 @@ Dependencies: Node.js (v16+), npm, Firebase Account
 
 * Clone & Install:
 
-Bash
+`Bash
 git clone 
 cd mindful-moods
-npm install
+npm install`
 
 * Config: Update src/firebase/firebaseConfig.js with your Firebase credentials
 
