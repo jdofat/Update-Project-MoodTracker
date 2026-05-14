@@ -63,10 +63,6 @@ I learned how to connect a frontend UI to a live backend, gained experience brea
 
 An edit function would allow users to update past notes if they wish to add more reflection later.
 
-## Reminders:
-
-Integrate browser notifications to remind users to log their mood at a specific time each day.
-
 ## Getting Started
 
 Dependencies: Node.js (v16+), npm, Firebase Account
