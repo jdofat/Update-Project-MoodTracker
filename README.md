@@ -31,7 +31,7 @@ MindfulMoods is a React.js application designed to help people track their daily
 
 * Authentication: Firebase Auth.
 
-* Deployment: [e.g., Vercel, Netlify, or GitHub Pages].
+* Deployment: Netlify
 
 ## React Concepts Used
 
